@@ -1,0 +1,777 @@
+/* Web3 Dashboard Styles */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* ========================================
+   Container & Background
+   ======================================== */
+
+.web3-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0a0a0f 0%, #1a1a2e 50%, #16213e 100%);
+  color: #ffffff;
+  position: relative;
+  padding: 0;
+}
+
+/* Animated Gradient Background */
+.web3-bg-gradient {
+  position: fixed;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: 
+    radial-gradient(circle at 20% 50%, rgba(99, 102, 241, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(168, 85, 247, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 40% 20%, rgba(236, 72, 153, 0.1) 0%, transparent 50%);
+  animation: gradientShift 20s ease infinite;
+  z-index: 0;
+  pointer-events: none !important;  /* 确保不阻挡点击 */
+}
+
+@keyframes gradientShift {
+  0%, 100% { transform: translate(0, 0) rotate(0deg); }
+  33% { transform: translate(5%, -5%) rotate(120deg); }
+  66% { transform: translate(-5%, 5%) rotate(240deg); }
+}
+
+/* Grid Background */
+.web3-bg-grid {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    linear-gradient(rgba(99, 102, 241, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(99, 102, 241, 0.05) 1px, transparent 1px);
+  background-size: 40px 40px;
+  z-index: 0;
+  pointer-events: none !important;  /* 确保不阻挡点击 */
+}
+
+/* ========================================
+   Header
+   ======================================== */
+
+.web3-header {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 32px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  background: rgba(10, 10, 15, 0.6);
+}
+
+.web3-header-left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.web3-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.web3-logo-icon {
+  font-size: 36px;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+.web3-logo-text {
+  font-size: 28px;
+  font-weight: 800;
+  letter-spacing: -1px;
+  margin: 0;
+}
+
+.web3-gradient-text {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  background-size: 200% 200%;
+  animation: gradientFlow 3s ease infinite;
+}
+
+@keyframes gradientFlow {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+.web3-header-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.web3-platform-badge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  backdrop-filter: blur(10px);
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.web3-badge-icon {
+  font-size: 16px;
+}
+
+/* ========================================
+   Main Layout - Two Columns
+   ======================================== */
+
+.web3-main-layout {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 400px 1fr;
+  gap: 24px;
+  padding: 24px 32px;
+  max-width: 1800px;
+  margin: 0 auto;
+}
+
+/* ========================================
+   Glass Card (Glassmorphism)
+   ======================================== */
+
+.web3-glass-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 24px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  transition: all 0.3s ease;
+  margin-bottom: 20px;
+  position: relative;
+  z-index: 1;  /* 确保在背景层之上 */
+  overflow: visible;  /* 允许下拉菜单溢出 */
+}
+
+.web3-glass-card:hover {
+  border-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px 0 rgba(99, 102, 241, 0.2);
+}
+
+.web3-card-title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 16px;
+  color: #fff;
+}
+
+.web3-title-icon {
+  font-size: 20px;
+}
+
+/* ========================================
+   Left Panel - Configuration
+   ======================================== */
+
+.web3-left-panel {
+  position: sticky;
+  top: 24px;
+  height: fit-content;
+}
+
+/* Tabs */
+.web3-tabs {
+  display: flex;
+  gap: 8px;
+}
+
+.web3-tab {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 16px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  color: #9ca3af;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.web3-tab:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(99, 102, 241, 0.5);
+  color: #fff;
+}
+
+.web3-tab.active {
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.2), rgba(168, 85, 247, 0.2));
+  border-color: rgba(99, 102, 241, 0.8);
+  color: #fff;
+  box-shadow: 0 0 20px rgba(99, 102, 241, 0.4);
+}
+
+.web3-tab:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.web3-tab-icon {
+  font-size: 16px;
+}
+
+.web3-soon-badge {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background: linear-gradient(135deg, #f093fb, #f5576c);
+  color: #fff;
+  font-size: 10px;
+  padding: 2px 6px;
+  border-radius: 8px;
+  font-weight: 700;
+}
+
+/* Select Dropdown */
+.web3-select {
+  width: 100%;
+  padding: 12px 16px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  outline: none;
+  position: relative;
+  z-index: 100;  /* 确保下拉菜单在最上层 */
+  pointer-events: auto !important;  /* 确保可点击 */
+}
+
+.web3-select:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(99, 102, 241, 0.5);
+}
+
+.web3-select:focus {
+  border-color: rgba(99, 102, 241, 0.8);
+  box-shadow: 0 0 20px rgba(99, 102, 241, 0.3);
+}
+
+.web3-select:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.web3-select option {
+  background: #1a1a2e;
+  color: #fff;
+}
+
+/* Switch Toggle */
+.web3-settings {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.web3-switch-row {
+  display: flex;
+  align-items: center;
+}
+
+.web3-switch-label {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.web3-switch-label:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.web3-switch-input {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.web3-switch-slider {
+  width: 44px;
+  height: 24px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  position: relative;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.web3-switch-slider::after {
+  content: '';
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  background: #fff;
+  border-radius: 50%;
+  top: 2px;
+  left: 2px;
+  transition: all 0.3s ease;
+}
+
+.web3-switch-input:checked + .web3-switch-slider {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  border-color: #667eea;
+  box-shadow: 0 0 15px rgba(102, 126, 234, 0.5);
+}
+
+.web3-switch-input:checked + .web3-switch-slider::after {
+  transform: translateX(20px);
+}
+
+.web3-switch-text {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+  font-size: 14px;
+  color: #d1d5db;
+}
+
+.web3-switch-icon {
+  font-size: 16px;
+}
+
+/* Run Button */
+.web3-run-button {
+  width: 100%;
+  padding: 16px 24px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border: none;
+  border-radius: 12px;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 20px rgba(102, 126, 234, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  position: relative;
+  overflow: hidden;
+}
+
+.web3-run-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transition: all 0.6s ease;
+}
+
+.web3-run-button:hover:not(:disabled)::before {
+  left: 100%;
+}
+
+.web3-run-button:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(102, 126, 234, 0.6);
+}
+
+.web3-run-button:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.web3-run-button:disabled {
+  background: rgba(255, 255, 255, 0.1);
+  cursor: not-allowed;
+  box-shadow: none;
+  opacity: 0.5;
+}
+
+.web3-run-button.loading {
+  pointer-events: none;
+}
+
+.web3-button-icon {
+  font-size: 20px;
+}
+
+/* Spinner */
+.web3-spinner {
+  width: 20px;
+  height: 20px;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ========================================
+   Right Panel - Status & Results
+   ======================================== */
+
+.web3-right-panel {
+  overflow-y: auto;
+  max-height: calc(100vh - 120px);
+}
+
+/* Quota Grid */
+.web3-quota-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.web3-quota-item {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  padding: 16px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.web3-quota-item:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(99, 102, 241, 0.5);
+}
+
+.web3-quota-highlight {
+  grid-column: span 3;
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(168, 85, 247, 0.1));
+  border-color: rgba(99, 102, 241, 0.5);
+}
+
+.web3-quota-label {
+  font-size: 12px;
+  color: #9ca3af;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.web3-quota-value {
+  font-size: 24px;
+  font-weight: 800;
+  color: #fff;
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 6px;
+}
+
+.web3-quota-value.web3-large {
+  font-size: 32px;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.web3-quota-value.web3-small {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.web3-quota-value.web3-success {
+  color: #10b981;
+}
+
+.web3-quota-unit {
+  font-size: 12px;
+  color: #9ca3af;
+  font-weight: 500;
+}
+
+/* Error Card */
+.web3-error-card {
+  background: rgba(239, 68, 68, 0.1);
+  border-color: rgba(239, 68, 68, 0.3);
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.web3-error-icon {
+  font-size: 32px;
+}
+
+.web3-error-text {
+  flex: 1;
+  color: #fca5a5;
+  font-weight: 500;
+  white-space: pre-wrap;
+}
+
+/* Results */
+.web3-results-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.web3-results-badge {
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.2), rgba(168, 85, 247, 0.2));
+  border: 1px solid rgba(99, 102, 241, 0.5);
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 700;
+  color: #a5b4fc;
+}
+
+.web3-results-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.web3-result-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 16px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+
+.web3-result-item:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(99, 102, 241, 0.5);
+  transform: translateX(4px);
+}
+
+.web3-result-rank {
+  font-size: 20px;
+  font-weight: 800;
+  color: #667eea;
+  min-width: 32px;
+}
+
+.web3-result-content {
+  flex: 1;
+}
+
+.web3-result-title {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 16px;
+  display: block;
+  margin-bottom: 8px;
+  transition: color 0.3s ease;
+}
+
+.web3-result-title:hover {
+  color: #667eea;
+}
+
+.web3-result-meta {
+  display: flex;
+  gap: 16px;
+  font-size: 14px;
+  color: #9ca3af;
+}
+
+.web3-result-subs, .web3-result-score {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.web3-results-more {
+  text-align: center;
+  padding: 12px;
+  color: #9ca3af;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+/* Debug Panel */
+.web3-collapse-header {
+  width: 100%;
+  background: none;
+  border: none;
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  color: inherit;
+}
+
+.web3-collapse-icon {
+  font-size: 16px;
+  color: #9ca3af;
+  transition: transform 0.3s ease;
+}
+
+.web3-collapse-icon.open {
+  transform: rotate(180deg);
+}
+
+.web3-debug-content {
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.web3-debug-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+  font-size: 14px;
+}
+
+.web3-debug-label {
+  color: #9ca3af;
+  font-weight: 500;
+}
+
+.web3-debug-value {
+  color: #fff;
+  font-weight: 700;
+}
+
+.web3-debug-value.web3-error {
+  color: #ef4444;
+}
+
+.web3-debug-value.web3-success {
+  color: #10b981;
+}
+
+.web3-debug-message {
+  margin-top: 12px;
+  padding: 12px;
+  background: rgba(99, 102, 241, 0.1);
+  border: 1px solid rgba(99, 102, 241, 0.3);
+  border-radius: 8px;
+  color: #a5b4fc;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+/* Footer Text */
+.web3-footer-text {
+  text-align: center;
+  padding: 20px;
+  color: #6b7280;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+/* ========================================
+   Responsive Design
+   ======================================== */
+
+@media (max-width: 1024px) {
+  .web3-main-layout {
+    grid-template-columns: 1fr;
+    padding: 16px;
+  }
+
+  .web3-left-panel {
+    position: relative;
+    top: 0;
+  }
+
+  .web3-quota-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .web3-quota-highlight {
+    grid-column: span 2;
+  }
+}
+
+@media (max-width: 768px) {
+  .web3-header {
+    flex-direction: column;
+    gap: 16px;
+    padding: 16px;
+  }
+
+  .web3-header-left,
+  .web3-header-right {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .web3-logo-text {
+    font-size: 24px;
+  }
+
+  .web3-main-layout {
+    padding: 12px;
+    gap: 16px;
+  }
+
+  .web3-glass-card {
+    padding: 16px;
+    margin-bottom: 16px;
+  }
+
+  .web3-quota-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .web3-quota-highlight {
+    grid-column: span 1;
+  }
+}

@@ -1,0 +1,238 @@
+# 竞品配置文件
+# 用于 YouTube KOL 分析和竞品监控
+
+competitors:
+  - id: weex
+    brand_names:
+      - WEEX
+      - WEEX Exchange
+      - WEEX Trading
+      - WEEXExchange
+    query_terms:
+      - WEEX
+      - WEEX exchange
+      - WEEX trading
+      - WEEX crypto
+      - WEEX review
+      - WEEX tutorial
+    intent_terms:
+      - ref
+      - referral
+      - invite
+      - code
+      - bonus
+      - sponsored
+      - partnered
+      - ambassador
+      - sign up
+      - signup
+      - promo
+      - promotion
+      - partnership
+    partnership_patterns:
+      - ref=
+      - invite=
+      - code=
+      - aff=
+      - referral=
+      - promo=
+      - bonus=
+    sponsor_terms:
+      - sponsored
+      - partnered
+      - ambassador
+      - brand ambassador
+      - paid promotion
+      - collaboration
+      - partner
+    risk_terms:
+      - guaranteed profit
+      - guaranteed returns
+      - 保证盈利
+      - 稳赚不赔
+      - signals group
+      - signal group
+      - 信号群
+      - 100% win rate
+      - 零风险
+      - no risk
+      - get rich quick
+      - 快速致富
+
+  - id: bitunix
+    brand_names:
+      - BITUNIX
+      - BitUnix
+      - Bitunix Exchange
+      - BITUNIX Trading
+    query_terms:
+      - BITUNIX
+      - BitUnix
+      - BITUNIX exchange
+      - BITUNIX trading
+      - BITUNIX crypto
+      - BITUNIX review
+      - BITUNIX tutorial
+    intent_terms:
+      - ref
+      - referral
+      - invite
+      - code
+      - bonus
+      - sponsored
+      - partnered
+      - ambassador
+      - sign up
+      - signup
+      - promo
+      - promotion
+      - partnership
+    partnership_patterns:
+      - ref=
+      - invite=
+      - code=
+      - aff=
+      - referral=
+      - promo=
+      - bonus=
+    sponsor_terms:
+      - sponsored
+      - partnered
+      - ambassador
+      - brand ambassador
+      - paid promotion
+      - collaboration
+      - partner
+    risk_terms:
+      - guaranteed profit
+      - guaranteed returns
+      - 保证盈利
+      - 稳赚不赔
+      - signals group
+      - signal group
+      - 信号群
+      - 100% win rate
+      - 零风险
+      - no risk
+      - get rich quick
+      - 快速致富
+
+  - id: blofin
+    brand_names:
+      - BLOFIN
+      - BloFin
+      - Blofin
+      - BLOFIN Exchange
+      - BloFin Trading
+    query_terms:
+      - BLOFIN
+      - BloFin
+      - Blofin
+      - BLOFIN exchange
+      - BLOFIN trading
+      - BLOFIN crypto
+      - BLOFIN review
+      - BLOFIN tutorial
+    intent_terms:
+      - ref
+      - referral
+      - invite
+      - code
+      - bonus
+      - sponsored
+      - partnered
+      - ambassador
+      - sign up
+      - signup
+      - promo
+      - promotion
+      - partnership
+    partnership_patterns:
+      - ref=
+      - invite=
+      - code=
+      - aff=
+      - referral=
+      - promo=
+      - bonus=
+    sponsor_terms:
+      - sponsored
+      - partnered
+      - ambassador
+      - brand ambassador
+      - paid promotion
+      - collaboration
+      - partner
+    risk_terms:
+      - guaranteed profit
+      - guaranteed returns
+      - 保证盈利
+      - 稳赚不赔
+      - signals group
+      - signal group
+      - 信号群
+      - 100% win rate
+      - 零风险
+      - no risk
+      - get rich quick
+      - 快速致富
+
+  - id: lbank
+    brand_names:
+      - LBANK
+      - LBank
+      - Lbank
+      - LBANK Exchange
+      - LBank Trading
+    query_terms:
+      - LBANK
+      - LBank
+      - Lbank
+      - LBANK exchange
+      - LBANK trading
+      - LBANK crypto
+      - LBANK review
+      - LBANK tutorial
+    intent_terms:
+      - ref
+      - referral
+      - invite
+      - code
+      - bonus
+      - sponsored
+      - partnered
+      - ambassador
+      - sign up
+      - signup
+      - promo
+      - promotion
+      - partnership
+    partnership_patterns:
+      - ref=
+      - invite=
+      - code=
+      - aff=
+      - referral=
+      - promo=
+      - bonus=
+    sponsor_terms:
+      - sponsored
+      - partnered
+      - ambassador
+      - brand ambassador
+      - paid promotion
+      - collaboration
+      - partner
+    risk_terms:
+      - guaranteed profit
+      - guaranteed returns
+      - 保证盈利
+      - 稳赚不赔
+      - signals group
+      - signal group
+      - 信号群
+      - 100% win rate
+      - 零风险
+      - no risk
+      - get rich quick
+      - 快速致富
